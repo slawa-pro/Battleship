@@ -41,7 +41,8 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,8 +64,86 @@ body {
 .cell {
   width: 100px;
   height: 100px;
+  border-radius: 10px;
   border: 2px solid #000;
   display: inline-block;
   cursor: pointer;
   transition: opacity 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+#gameStartModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 25px;
+  background-color: #ffff;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.name-game {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.rul-game {
+  margin-bottom: 15px;
+}
+
+#winningMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 25px;
+  background-color: #ffff;
+  border: 2px solid #333;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.message-box h2 {
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+#restartGame,
+#startGameButton {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#startGameButton:hover {
+  background-color: #000000;
+}
+
+#restartGame:hover {
+  background-color: #000000;
+}
+
+#winningMessage::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
