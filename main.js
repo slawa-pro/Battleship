@@ -4,7 +4,6 @@ let selectedCells = [];
 
 const gameContainer = document.querySelector('.game-playing');
 
-
 function startNewGame() {
   colorPairs = colorPairs.sort(() => 0.5 - Math.random());
   
