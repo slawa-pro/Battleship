@@ -35,6 +35,23 @@ body {
   border: 2px solid #000;
   cursor: pointer;
   transition: opacity 0.3s;
+  animation: showCell 0.4s ease-in-out;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #ccc;
+}
+
+@keyframes showCell {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 #gameStartModal {
@@ -178,4 +195,3 @@ body {
   width: 40px;
   height: auto;
 }
-

@@ -4,7 +4,7 @@ let colorPairs = [...colors, ...colors];
 let selectedCells = [];
 
 let startTime;
-let timerInterval; 
+let timerInterval;
 let attempts = 0;
 
 const gameContainer = document.querySelector('.game-playing');
@@ -12,7 +12,7 @@ const gameContainer = document.querySelector('.game-playing');
 function startNewGame() {
   colorPairs = colorPairs.sort(() => 0.5 - Math.random());
   gameRestart.play();
-  
+
   const gameInfo = document.getElementById('gameInfo');
   gameInfo.classList.remove('hidden');
 
@@ -30,9 +30,8 @@ function startNewGame() {
   updateAttempts();
   startTime = new Date();
   startTimer();
-  
 
-  let boxes = document.querySelectorAll('.cell');  
+  let boxes = document.querySelectorAll('.cell');
 
   boxes.forEach(box => {
     box.addEventListener('click', function() {
@@ -58,7 +57,6 @@ function compareColors(cells) {
   let color2 = cells[1].getAttribute('data-color');
 
   if (color1 === color2) {
-
     cells[0].style.visibility = 'hidden';
     cells[1].style.visibility = 'hidden';
 
@@ -79,6 +77,10 @@ function updateAttempts() {
 }
 
 function startTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+
   const timeDisplay = document.getElementById('time-spent');
   
   function updateTime() {
@@ -101,7 +103,7 @@ function checkGameEnd() {
   });
 
   if (allHidden) {
-    clearInterval(timerInterval); 
+    clearInterval(timerInterval);
     winSound.play();
     displayWinningMessage();
   }
@@ -133,7 +135,7 @@ document.getElementById('restartGame').addEventListener('click', () => {
 document.getElementById('restartGameOver').addEventListener('click', () => {
   const gameOverMessage = document.getElementById('gameOverMessage');
   gameOverMessage.classList.add('hidden');
-  startNewGame(); 
+  startNewGame();
 });
 
 document.getElementById('startGameButton').addEventListener('click', () => {
@@ -142,7 +144,6 @@ document.getElementById('startGameButton').addEventListener('click', () => {
   startNewGame();
 });
 
-//sound for game.
 const startGameButton = document.getElementById('startGameButton');
 const startSound = document.getElementById('start-sound');
 
@@ -155,6 +156,3 @@ startGameButton.addEventListener('click', function() {
   startSound.play();
   startNewGame();
 });
-
-
-
