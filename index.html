@@ -19,23 +19,49 @@
       <div id="gameStartModal" class="modal">
         <div class="modal-content">
           <h2 class="name-game">Color game</h2>
-          <p class="rul-game">Game rules: Look for the same color</p>
+          <p class="rul-game">Game rules: Look for the same color.<br>
+            You have 13 attempts or you lost.</p>
           <button id="startGameButton">Start game</button>
         </div>
       </div>
       <div id="winningMessage" class="hidden">
         <div class="message-box">
-          <h2>Mission completed !</h2>
+          <h2>Mission completed!</h2>
           <button id="restartGame">Try again</button>
         </div>
+      </div>
+      <div id="gameOverMessage" class="hidden">
+        <div class="message-box">
+          <h2>Game over!</h2>
+          <button id="restartGameOver">Try again</button>
+        </div>
+      </div>       
+      <div id="gameInfo" class="game-info hidden">
+        <h2 class="game-info">Game Info</h2>
+        <p id="time-spent">Time spent: 0 sec</p>
+        <p id="attempts-count">Attempts: 0</p>
       </div>
     </main>
     <footer class="footer">
       <div class="footer-container">
+        <a class="git" href="https://github.com/slawa-pro">GitHub</a>
+        <span>2024</span>
+        <a class="rs-logo" href="https://rs.school/courses/javascript-preschool-ru">
+          <img src="./svg/rss-logo.svg" alt="The RSschool's logo">
+        </a>
       </div>
     </footer>
+    <audio id="start-sound" src="./music/atmosfernyiy-igrovoy-apgreyd-zvukovyih-effektov-materiala-39370.mp3"></audio>
+    <audio id="click-sound" src="./music/notification.mp3"></audio>
+    <audio id="win-sound" src="./music/silno-stimulirovat-zvuk-igrovoy-stsenyi-39544.mp3"></audio>
+    <audio id="gameover-sound" src="./music/igrovoy-effektyi-udar-rezkiy.mp3"></audio>
+    <audio id="game-restart" src="./music/rpg-igrovoy-boevoy-zvuk-40243.mp3"></audio>
+    
   </div>
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
 
